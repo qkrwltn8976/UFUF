@@ -10,13 +10,28 @@ import UIKit
 
 class SigninVC: UIViewController {
 
+    @IBOutlet weak var signinBtn: CustomButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    
+    @IBAction func signinBtnAction(_ sender: Any) {
+        //화면 이동
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = storyboard.instantiateViewController(withIdentifier: "MainNC")
+//
+//    self.navigationController?.show(viewController, sender: nil)
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewcontroller = storyboard.instantiateViewController(withIdentifier: "MainNC")
+        present(viewcontroller, animated: true)
+    }
+  
+    
     /*
     // MARK: - Navigation
 

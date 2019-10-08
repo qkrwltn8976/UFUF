@@ -20,6 +20,8 @@ class SelectItemVC: UIViewController {
     
     var veggieNameLists: [String] = ["파","양파","오이","당근","파프리카","감자","고구마","가지"]
     var veggieAmountLists: [String] = ["500g","100g","50g","450g","100g","200g","100g","400g"]
+    var veggieImageLists: [String] = []
+    var veggieCntLists: [String] = ["0", "0", "0", "0", "0", "0", "0", "0"]
     
     var itemNameLists: [String] = []
     var itemAmountLists: [String] = []
@@ -49,12 +51,15 @@ class SelectItemVC: UIViewController {
         itemNameLists = fruitNameLists
         itemAmountLists = fruitAmountLists
         itemImageLists = fruitImageLists
+        itemCntLists = fruitCntLists
         itemCollectionView.reloadData()
     }
     
     @IBAction func veggieBtnClick(_ sender: Any) {
         itemNameLists = veggieNameLists
         itemAmountLists = veggieAmountLists
+        itemImageLists = veggieImageLists
+        itemCntLists = veggieCntLists
         itemCollectionView.reloadData()
     }
     
@@ -73,17 +78,11 @@ extension SelectItemVC: UICollectionViewDataSource {
         cell.itemName.text = self.itemNameLists[indexPath.item]
         cell.itemAmount.text = self.itemAmountLists[indexPath.item]
         cell.itemImg.image = UIImage(named: self.itemImageLists[indexPath.item])
-  
+        cell.itemCnt.text = self.itemCntLists[indexPath.item]
+        
         cell.stepper.tag = indexPath.row
         cell.stepper.addTarget(self, action: #selector(stepperAction(sender:)), for: .valueChanged)
 
-//        cell.category.text = category[ self.helperElements?[indexPath.item].helper.categoryIdx ?? 1 - 1]
-        //        cell.reviewCount.text = "(\(self.helperElements?[indexPath.item].helper.reviewCount ?? "")개의 후기)"
-        //        cell.tag1.text = "#\(self.helperElements?[indexPath.item].experience[0] ?? "")"
-        //        cell.tag2.text = "#\(self.helperElements?[indexPath.item].experience[1] ?? "")"
-        //        cell.tag3.text = "#\(self.helperElements?[indexPath.item].experience[2] ?? "")"
-        //
-        //
         return cell
     }
     

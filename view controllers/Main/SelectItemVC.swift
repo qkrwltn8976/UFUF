@@ -15,11 +15,16 @@ class SelectItemVC: UIViewController {
     
     var fruitNameLists: [String] = ["사과", "배", "참외", "밤 3개", "애플 수박", "바나나", "레몬", "감"]
     var fruitAmountLists: [String] = ["200g", "220g", "100g", "350g", "800g", "180g", "120g", "150g"]
+    var fruitImageLists: [String] = ["apple.jpeg", "pear.jpeg", "yellowmelon.jpg", "bam.jpeg", "applemelon.jpg", "banana.jpg", "lemon.jpg", "gam.jpg"]
+    var fruitCntLists: [String] = ["0", "0", "0", "0", "0", "0", "0", "0"]
+    
     var veggieNameLists: [String] = ["파","양파","오이","당근","파프리카","감자","고구마","가지"]
     var veggieAmountLists: [String] = ["500g","100g","50g","450g","100g","200g","100g","400g"]
     
     var itemNameLists: [String] = []
     var itemAmountLists: [String] = []
+    var itemImageLists: [String] = []
+    var itemCntLists: [String] = []
     
     @IBOutlet weak var fruitBtn: CustomButton!
     @IBOutlet weak var veggieBtn: CustomButton!
@@ -30,6 +35,8 @@ class SelectItemVC: UIViewController {
         
         itemNameLists = fruitNameLists
         itemAmountLists = fruitAmountLists
+        itemImageLists = fruitImageLists
+        itemCntLists = fruitCntLists
         
         itemCollectionView.reloadData()
         itemCollectionView.delegate = self
@@ -41,6 +48,7 @@ class SelectItemVC: UIViewController {
     @IBAction func fruitBtnClick(_ sender: Any) {
         itemNameLists = fruitNameLists
         itemAmountLists = fruitAmountLists
+        itemImageLists = fruitImageLists
         itemCollectionView.reloadData()
     }
     
@@ -64,7 +72,11 @@ extension SelectItemVC: UICollectionViewDataSource {
         
         cell.itemName.text = self.itemNameLists[indexPath.item]
         cell.itemAmount.text = self.itemAmountLists[indexPath.item]
-        
+        cell.itemImg.image = UIImage(named: self.itemImageLists[indexPath.item])
+  
+        cell.stepper.tag = indexPath.row
+        cell.stepper.addTarget(self, action: #selector(stepperAction(sender:)), for: .valueChanged)
+
 //        cell.category.text = category[ self.helperElements?[indexPath.item].helper.categoryIdx ?? 1 - 1]
         //        cell.reviewCount.text = "(\(self.helperElements?[indexPath.item].helper.reviewCount ?? "")개의 후기)"
         //        cell.tag1.text = "#\(self.helperElements?[indexPath.item].experience[0] ?? "")"
@@ -74,7 +86,16 @@ extension SelectItemVC: UICollectionViewDataSource {
         //
         return cell
     }
+    
+    @objc func stepperAction(sender: UIStepper)  {
+//        let stepperValue = Int(sender.value)
+        itemCntLists[sender.tag] = String(sender.value)
+        print("Stepper \(itemNameLists[sender.tag]) clicked. Its value \(itemCntLists[sender.tag])")
+        itemCollectionView.reloadData()
+//        itemCntLists[sender.tag] = String(sender.value)
+    }
 }
+
 
 // MARK: - UICollectionViewDelegate
 extension SelectItemVC: UICollectionViewDelegate {

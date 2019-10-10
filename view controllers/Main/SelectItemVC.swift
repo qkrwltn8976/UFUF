@@ -12,6 +12,7 @@ class SelectItemVC: UIViewController {
     
     var itemCells:[ItemCollectionViewCell] = []
     var itemLists: [Item] = []
+    var selectedList: Int = 0
     
     var fruitNameLists: [String] = ["사과", "배", "참외", "밤 3개", "애플 수박", "바나나", "레몬", "감"]
     var fruitAmountLists: [String] = ["200g", "220g", "100g", "350g", "800g", "180g", "120g", "150g"]
@@ -20,7 +21,7 @@ class SelectItemVC: UIViewController {
     
     var veggieNameLists: [String] = ["파","양파","오이","당근","파프리카","감자","고구마","가지"]
     var veggieAmountLists: [String] = ["500g","100g","50g","450g","100g","200g","100g","400g"]
-    var veggieImageLists: [String] = []
+    var veggieImageLists: [String] = ["pa.jpeg", "onion.jpeg", "cucum.pjg", "carrot.jpg", "papri.jpeg", "potato.jpeg", "spotato.jpeg", "gaji.jpeg"]
     var veggieCntLists: [String] = ["0", "0", "0", "0", "0", "0", "0", "0"]
     
     var itemNameLists: [String] = []
@@ -39,12 +40,13 @@ class SelectItemVC: UIViewController {
         itemAmountLists = fruitAmountLists
         itemImageLists = fruitImageLists
         itemCntLists = fruitCntLists
+        selectedList = 0
         
         itemCollectionView.reloadData()
         itemCollectionView.delegate = self
         itemCollectionView.dataSource = self
         
-        self.navigationItem.title = "어푸어푸"
+//        self.navigationItem.title = "어푸어푸"
     }
     
     @IBAction func fruitBtnClick(_ sender: Any) {
@@ -52,6 +54,7 @@ class SelectItemVC: UIViewController {
         itemAmountLists = fruitAmountLists
         itemImageLists = fruitImageLists
         itemCntLists = fruitCntLists
+        selectedList = 0
         itemCollectionView.reloadData()
     }
     
@@ -60,9 +63,25 @@ class SelectItemVC: UIViewController {
         itemAmountLists = veggieAmountLists
         itemImageLists = veggieImageLists
         itemCntLists = veggieCntLists
+        selectedList = 1
         itemCollectionView.reloadData()
     }
     
+    @IBAction func completeBtnClick(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "ShoppingBasketVC") as! ShoppingBasketVC
+        var i : Int = 0
+        for (index, item) in itemCntLists.enumerated() {
+            if(Int(item)! > 0) {
+                print(index)
+                viewController.itemNameLists.append(itemNameLists[index])
+                viewController.itemAmountLists.append(itemAmountLists[index])
+                viewController.itemImageLists.append(itemImageLists[index])
+                viewController.itemCntLists.append(itemCntLists[index])
+            }
+        }
+        navigationController?.show(viewController, sender: nil)
+    }
 }
 
 extension SelectItemVC: UICollectionViewDataSource {
@@ -88,8 +107,16 @@ extension SelectItemVC: UICollectionViewDataSource {
     
     @objc func stepperAction(sender: UIStepper)  {
 //        let stepperValue = Int(sender.value)
-        itemCntLists[sender.tag] = String(sender.value)
-        print("Stepper \(itemNameLists[sender.tag]) clicked. Its value \(itemCntLists[sender.tag])")
+        itemCntLists[sender.tag] = String(Int(sender.value))
+        print("Stepper \(itemNameLists[sender.tag]) clicked. Its value \(Int(sender.value))")
+        
+        if(selectedList == 0) {
+            fruitCntLists = itemCntLists
+        }
+        else {
+            veggieCntLists = itemCntLists
+        }
+        
         itemCollectionView.reloadData()
 //        itemCntLists[sender.tag] = String(sender.value)
     }

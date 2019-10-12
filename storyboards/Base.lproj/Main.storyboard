@@ -1077,11 +1077,14 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
                                                         <state key="normal" title="선택완료">
-                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="24"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="yellow"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -1167,29 +1170,25 @@
                             <view contentMode="scaleToFill" restorationIdentifier="sbPopUpID" translatesAutoresizingMaskIntoConstraints="NO" id="JgE-5s-rl6">
                                 <rect key="frame" x="26" y="280" width="323" height="277"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="farmer" translatesAutoresizingMaskIntoConstraints="NO" id="8tf-8X-eB9">
-                                        <rect key="frame" x="116" y="28" width="91" height="80"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad" translatesAutoresizingMaskIntoConstraints="NO" id="8tf-8X-eB9">
+                                        <rect key="frame" x="81.5" y="0.0" width="160" height="160"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="ZdP-G1-sTJ"/>
-                                            <constraint firstAttribute="width" constant="91" id="pGk-lU-TaD"/>
+                                            <constraint firstAttribute="height" constant="160" id="ZdP-G1-sTJ"/>
+                                            <constraint firstAttribute="width" constant="160" id="pGk-lU-TaD"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1E-22-G0T">
-                                        <rect key="frame" x="21" y="164" width="281" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조금만 덜어볼까요? " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1E-22-G0T">
+                                        <rect key="frame" x="21" y="180" width="281" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="281" id="BJe-yQ-mZm"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="QNZ-On-aAo"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="281" id="Suz-wf-p3k"/>
                                             <constraint firstAttribute="height" constant="48" id="XsY-7Z-Rlv"/>
                                         </constraints>
-                                        <string key="text">지금 접속중인 헬퍼가 적은 것 같아요.
-윌슨이 도와드릴게요. 같이 좀 더 기다려볼까요?</string>
                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEy-Xv-XIw">
-                                        <rect key="frame" x="70" y="216" width="183" height="38"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEy-Xv-XIw" customClass="CustomButton" customModule="UFUF" customModuleProvider="target">
+                                        <rect key="frame" x="70" y="230" width="183" height="38"/>
                                         <color key="backgroundColor" name="yellow"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="183" id="7Ir-WP-Ct0"/>
@@ -1199,14 +1198,20 @@
                                         <state key="normal" title="확인">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="19"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="confirmBtnClick:" destination="VFI-Pi-lnz" eventType="touchUpInside" id="X98-kV-vtt"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="선택 가능한 무게를 초과했어요" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xJ-C7-uo0">
-                                        <rect key="frame" x="21" y="131" width="281" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선택 가능한 무게를 초과했어요" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xJ-C7-uo0">
+                                        <rect key="frame" x="21" y="160" width="281" height="48"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="DgL-ib-Nfb"/>
                                             <constraint firstAttribute="height" constant="48" id="EB8-GU-Ccy"/>
                                             <constraint firstAttribute="width" constant="281" id="XAQ-8I-21S"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="281" id="of8-p5-s0s"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="18"/>
                                         <color key="textColor" name="darkPurple"/>
@@ -1216,14 +1221,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="323" id="3eU-U3-itL"/>
-                                    <constraint firstItem="G1E-22-G0T" firstAttribute="top" secondItem="8tf-8X-eB9" secondAttribute="bottom" constant="22" id="Hns-V6-cJe"/>
-                                    <constraint firstItem="fEy-Xv-XIw" firstAttribute="top" secondItem="G1E-22-G0T" secondAttribute="bottom" constant="12" id="Rzr-s2-RJx"/>
-                                    <constraint firstItem="4xJ-C7-uo0" firstAttribute="top" secondItem="JgE-5s-rl6" secondAttribute="top" constant="131" id="X7c-mR-DvG"/>
+                                    <constraint firstItem="fEy-Xv-XIw" firstAttribute="top" secondItem="G1E-22-G0T" secondAttribute="bottom" constant="2" id="Rzr-s2-RJx"/>
                                     <constraint firstItem="8tf-8X-eB9" firstAttribute="centerX" secondItem="JgE-5s-rl6" secondAttribute="centerX" id="aFQ-v1-zOf"/>
-                                    <constraint firstItem="8tf-8X-eB9" firstAttribute="leading" secondItem="JgE-5s-rl6" secondAttribute="leading" constant="116" id="eVu-Mm-Pxl"/>
-                                    <constraint firstItem="G1E-22-G0T" firstAttribute="top" secondItem="4xJ-C7-uo0" secondAttribute="bottom" constant="13" id="mJa-Yo-h73"/>
+                                    <constraint firstItem="G1E-22-G0T" firstAttribute="top" secondItem="4xJ-C7-uo0" secondAttribute="bottom" constant="-28" id="mJa-Yo-h73"/>
                                     <constraint firstItem="4xJ-C7-uo0" firstAttribute="leading" secondItem="G1E-22-G0T" secondAttribute="leading" id="oNs-1n-dw1"/>
-                                    <constraint firstAttribute="trailing" secondItem="8tf-8X-eB9" secondAttribute="trailing" constant="116" id="wxj-Wn-JVw"/>
+                                    <constraint firstItem="8tf-8X-eB9" firstAttribute="top" secondItem="JgE-5s-rl6" secondAttribute="top" id="odG-WY-WVa"/>
+                                    <constraint firstItem="4xJ-C7-uo0" firstAttribute="top" secondItem="8tf-8X-eB9" secondAttribute="bottom" id="tIq-Go-nab"/>
                                     <constraint firstAttribute="height" constant="277" id="yiW-ON-5ob"/>
                                     <constraint firstItem="G1E-22-G0T" firstAttribute="centerX" secondItem="JgE-5s-rl6" secondAttribute="centerX" id="yxb-ZX-nSJ"/>
                                 </constraints>
@@ -1239,6 +1242,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aHI-Gi-JiM"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmBtn" destination="fEy-Xv-XIw" id="beE-ia-T2b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxf-AL-6ix" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1304,6 +1310,7 @@
         <image name="lbag" width="210" height="231"/>
         <image name="leaf" width="279" height="302"/>
         <image name="mbag" width="177" height="195"/>
+        <image name="sad" width="231" height="306"/>
         <image name="sbag" width="143" height="162"/>
         <image name="searchIcon" width="21" height="21"/>
         <image name="searchImg" width="190" height="191"/>

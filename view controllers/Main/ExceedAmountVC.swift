@@ -10,13 +10,17 @@ import UIKit
 
 class ExceedAmountVC: UIViewController {
 
+    @IBOutlet weak var confirmBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func confirmBtnClick(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

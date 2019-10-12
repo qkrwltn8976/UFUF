@@ -121,7 +121,12 @@ extension SelectItemVC: UICollectionViewDataSource {
         
         totalAmount += Int(itemAmountLists[sender.tag])!
         if(totalAmount > 2900) {
+            let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:
+                "ExceedAmountVC") as! ExceedAmountVC
+//            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+//            alert.setValue(popOverVC, forKey: "contentViewController")
             
+            self.present(popOverVC, animated: true)
         } else {
             sumTotal.text = String(totalAmount) + " / 2900g"
         }

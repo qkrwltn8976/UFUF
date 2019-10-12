@@ -13,9 +13,10 @@ class SelectItemVC: UIViewController {
     var itemCells:[ItemCollectionViewCell] = []
     var itemLists: [Item] = []
     var selectedList: Int = 0
+    var totalAmount: Int = 0
     
     var fruitNameLists: [String] = ["사과", "배", "참외", "밤 3개", "애플 수박", "바나나", "레몬", "감"]
-    var fruitAmountLists: [String] = ["200g", "220g", "100g", "350g", "800g", "180g", "120g", "150g"]
+    var fruitAmountLists: [String] = ["200", "220", "100", "350", "800", "180", "120", "150"]
     var fruitImageLists: [String] = ["apple.jpeg", "pear.jpeg", "yellowmelon.jpg", "bam.jpeg", "applemelon.jpg", "banana.jpg", "lemon.jpg", "gam.jpg"]
     var fruitCntLists: [String] = ["0", "0", "0", "0", "0", "0", "0", "0"]
     
@@ -29,6 +30,8 @@ class SelectItemVC: UIViewController {
     var itemImageLists: [String] = []
     var itemCntLists: [String] = []
     
+    
+    @IBOutlet weak var sumTotal: UILabel!
     @IBOutlet weak var fruitBtn: CustomButton!
     @IBOutlet weak var veggieBtn: CustomButton!
     @IBOutlet weak var itemCollectionView: UICollectionView!
@@ -70,10 +73,9 @@ class SelectItemVC: UIViewController {
     @IBAction func completeBtnClick(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "ShoppingBasketVC") as! ShoppingBasketVC
-        var i : Int = 0
+        
         for (index, item) in itemCntLists.enumerated() {
             if(Int(item)! > 0) {
-                print(index)
                 viewController.itemNameLists.append(itemNameLists[index])
                 viewController.itemAmountLists.append(itemAmountLists[index])
                 viewController.itemImageLists.append(itemImageLists[index])
@@ -101,12 +103,12 @@ extension SelectItemVC: UICollectionViewDataSource {
         
         cell.stepper.tag = indexPath.row
         cell.stepper.addTarget(self, action: #selector(stepperAction(sender:)), for: .valueChanged)
-
+        
         return cell
     }
     
     @objc func stepperAction(sender: UIStepper)  {
-//        let stepperValue = Int(sender.value)
+
         itemCntLists[sender.tag] = String(Int(sender.value))
         print("Stepper \(itemNameLists[sender.tag]) clicked. Its value \(Int(sender.value))")
         
@@ -117,8 +119,13 @@ extension SelectItemVC: UICollectionViewDataSource {
             veggieCntLists = itemCntLists
         }
         
+        totalAmount += Int(itemAmountLists[sender.tag])!
+        if(totalAmount > 2900) {
+            
+        } else {
+            sumTotal.text = String(totalAmount) + " / 2900g"
+        }
         itemCollectionView.reloadData()
-//        itemCntLists[sender.tag] = String(sender.value)
     }
 }
 

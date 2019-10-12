@@ -39,7 +39,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="avT-2e-DJd">
-                                <rect key="frame" x="83" y="55" width="157" height="35"/>
+                                <rect key="frame" x="83" y="54.5" width="157" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="파 반" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsX-tu-Mlq">
                                         <rect key="frame" x="0.0" y="0.0" width="157" height="15.5"/>
@@ -51,15 +51,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eu-jz-tnX">
-                                        <rect key="frame" x="0.0" y="19.5" width="33.5" height="15.5"/>
+                                        <rect key="frame" x="0.0" y="19.5" width="31.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="GkF-zD-eQT">
-                                <rect key="frame" x="190" y="58" width="94" height="29"/>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="GkF-zD-eQT">
+                                <rect key="frame" x="190.5" y="58" width="94" height="29"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stepper>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tlu-PE-bqK">
@@ -70,7 +70,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8D-w0-uf0">
-                                <rect key="frame" x="302" y="65" width="8.5" height="15.5"/>
+                                <rect key="frame" x="302.5" y="64.5" width="8" height="16.5"/>
                                 <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>

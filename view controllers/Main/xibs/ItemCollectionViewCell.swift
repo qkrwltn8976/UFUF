@@ -14,6 +14,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var itemAmount: UILabel!
     @IBOutlet weak var itemCnt: UILabel!
+    @IBOutlet weak var itemPrice: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
     override func awakeFromNib() {

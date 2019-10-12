@@ -21,7 +21,7 @@ class SelectItemVC: UIViewController {
     var fruitCntLists: [String] = ["0", "0", "0", "0", "0", "0", "0", "0"]
     
     var veggieNameLists: [String] = ["파","양파","오이","당근","파프리카","감자","고구마","가지"]
-    var veggieAmountLists: [String] = ["500g","100g","50g","450g","100g","200g","100g","400g"]
+    var veggieAmountLists: [String] = ["500","100","50","450","100","200","100","400"]
     var veggieImageLists: [String] = ["pa.jpeg", "onion.jpeg", "cucum.pjg", "carrot.jpg", "papri.jpeg", "potato.jpeg", "spotato.jpeg", "gaji.jpeg"]
     var veggieCntLists: [String] = ["0", "0", "0", "0", "0", "0", "0", "0"]
     
@@ -74,12 +74,20 @@ class SelectItemVC: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "ShoppingBasketVC") as! ShoppingBasketVC
         
-        for (index, item) in itemCntLists.enumerated() {
+        for (index, item) in fruitCntLists.enumerated() {
             if(Int(item)! > 0) {
-                viewController.itemNameLists.append(itemNameLists[index])
-                viewController.itemAmountLists.append(itemAmountLists[index])
-                viewController.itemImageLists.append(itemImageLists[index])
-                viewController.itemCntLists.append(itemCntLists[index])
+                viewController.itemNameLists.append(fruitNameLists[index])
+                viewController.itemAmountLists.append(fruitAmountLists[index])
+                viewController.itemImageLists.append(fruitImageLists[index])
+                viewController.itemCntLists.append(fruitCntLists[index])
+            }
+        }
+        for (index, item) in veggieCntLists.enumerated() {
+            if(Int(item)! > 0) {
+                viewController.itemNameLists.append(veggieNameLists[index])
+                viewController.itemAmountLists.append(veggieAmountLists[index])
+                viewController.itemImageLists.append(veggieImageLists[index])
+                viewController.itemCntLists.append(veggieCntLists[index])
             }
         }
         navigationController?.show(viewController, sender: nil)
@@ -97,7 +105,7 @@ extension SelectItemVC: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
         
         cell.itemName.text = self.itemNameLists[indexPath.item]
-        cell.itemAmount.text = self.itemAmountLists[indexPath.item]
+        cell.itemAmount.text = self.itemAmountLists[indexPath.item] + "g"
         cell.itemImg.image = UIImage(named: self.itemImageLists[indexPath.item])
         cell.itemCnt.text = self.itemCntLists[indexPath.item]
         
@@ -109,7 +117,7 @@ extension SelectItemVC: UICollectionViewDataSource {
     
     @objc func stepperAction(sender: UIStepper)  {
 
-        itemCntLists[sender.tag] = String(Int(sender.value))
+        itemCntLists[sender.tag] = String(Int(itemCntLists[sender.tag])!+1)
         print("Stepper \(itemNameLists[sender.tag]) clicked. Its value \(Int(sender.value))")
         
         if(selectedList == 0) {
@@ -142,8 +150,6 @@ extension SelectItemVC: UICollectionViewDelegate {
         
         guard let vc = storyboard.instantiateViewController(withIdentifier: "SelectItemVC") as? SelectItemVC else { return }
         
-        //vc.userID = self.concernInfoList?[indexPath.item].userInfo.userIdx
-        //print(vc.userID)
         self.navigationController?.show(vc, sender: nil)
     }
 }

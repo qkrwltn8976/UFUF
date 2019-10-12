@@ -39,7 +39,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="avT-2e-DJd">
-                                <rect key="frame" x="83" y="54.5" width="157" height="36"/>
+                                <rect key="frame" x="83" y="44.5" width="157" height="56.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="파 반" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsX-tu-Mlq">
                                         <rect key="frame" x="0.0" y="0.0" width="157" height="15.5"/>
@@ -52,6 +52,12 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eu-jz-tnX">
                                         <rect key="frame" x="0.0" y="19.5" width="31.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
+                                        <color key="textColor" name="black"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="450원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2k-w3-wAt">
+                                        <rect key="frame" x="0.0" y="40" width="35.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
@@ -123,6 +129,7 @@
                 <outlet property="itemCnt" destination="N8D-w0-uf0" id="uuc-Bq-T9V"/>
                 <outlet property="itemImg" destination="Sx7-wa-Gzy" id="3Tm-xO-jEA"/>
                 <outlet property="itemName" destination="PsX-tu-Mlq" id="XB1-MV-neV"/>
+                <outlet property="itemPrice" destination="J2k-w3-wAt" id="elB-hV-4yR"/>
                 <outlet property="stepper" destination="GkF-zD-eQT" id="TGK-j5-7so"/>
             </connections>
             <point key="canvasLocation" x="134.78260869565219" y="104.46428571428571"/>

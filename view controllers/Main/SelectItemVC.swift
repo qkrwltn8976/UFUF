@@ -15,20 +15,23 @@ class SelectItemVC: UIViewController {
     var selectedList: Int = 0
     var totalAmount: Int = 0
     
-    var fruitNameLists: [String] = ["사과", "배", "참외", "밤 3개", "애플 수박", "바나나", "레몬", "감"]
-    var fruitAmountLists: [String] = ["200", "220", "100", "350", "800", "180", "120", "150"]
-    var fruitImageLists: [String] = ["apple.jpeg", "pear.jpeg", "yellowmelon.jpg", "bam.jpeg", "applemelon.jpg", "banana.jpg", "lemon.jpg", "gam.jpg"]
+    var fruitNameLists: [String] = ["사과", "배", "참외", "자몽", "애플수박", "바나나", "레몬", "귤"]
+    var fruitAmountLists: [String] = ["200", "220", "100", "450", "800", "180", "120", "150"]
+    var fruitPriceLists: [String] = ["700원","1000원","700원","550원","2500원","500원","300원","200원"]
+    var fruitImageLists: [String] = ["apple.jpeg", "pear.jpeg", "yellowmelon.jpg", "grapefruit.jpeg", "applemelon.jpg", "banana.jpg", "lemon.jpg", "tanga.jpeg"]
     var fruitCntLists: [String] = ["0", "0", "0", "0", "0", "0", "0", "0"]
     
-    var veggieNameLists: [String] = ["파","양파","오이","당근","파프리카","감자","고구마","가지"]
-    var veggieAmountLists: [String] = ["500","100","50","450","100","200","100","400"]
-    var veggieImageLists: [String] = ["pa.jpeg", "onion.jpeg", "cucum.pjg", "carrot.jpg", "papri.jpeg", "potato.jpeg", "spotato.jpeg", "gaji.jpeg"]
+    var veggieNameLists: [String] = ["애호박","양파","오이","당근","감자","고구마"]
+    var veggieAmountLists: [String] = ["375","100","50","450","200","100","400"]
+    var veggiePriceLists: [String] = ["500원","350원","300원","450원","450원","450원"]
+    var veggieImageLists: [String] = ["hobak.jpeg", "onion.jpeg", "cucum.pjg", "carrot.jpg", "potato.jpeg", "spotato.jpeg"]
     var veggieCntLists: [String] = ["0", "0", "0", "0", "0", "0", "0", "0"]
     
     var itemNameLists: [String] = []
     var itemAmountLists: [String] = []
     var itemImageLists: [String] = []
     var itemCntLists: [String] = []
+    var itemPriceLists: [String] = []
     
     
     @IBOutlet weak var sumTotal: UILabel!
@@ -43,6 +46,7 @@ class SelectItemVC: UIViewController {
         itemAmountLists = fruitAmountLists
         itemImageLists = fruitImageLists
         itemCntLists = fruitCntLists
+        itemPriceLists = fruitPriceLists
         selectedList = 0
         
         itemCollectionView.reloadData()
@@ -57,6 +61,7 @@ class SelectItemVC: UIViewController {
         itemAmountLists = fruitAmountLists
         itemImageLists = fruitImageLists
         itemCntLists = fruitCntLists
+        itemPriceLists = fruitPriceLists
         selectedList = 0
         itemCollectionView.reloadData()
     }
@@ -66,6 +71,7 @@ class SelectItemVC: UIViewController {
         itemAmountLists = veggieAmountLists
         itemImageLists = veggieImageLists
         itemCntLists = veggieCntLists
+        itemPriceLists = veggiePriceLists
         selectedList = 1
         itemCollectionView.reloadData()
     }
@@ -80,6 +86,7 @@ class SelectItemVC: UIViewController {
                 viewController.itemAmountLists.append(fruitAmountLists[index])
                 viewController.itemImageLists.append(fruitImageLists[index])
                 viewController.itemCntLists.append(fruitCntLists[index])
+                viewController.itemPriceLists.append(fruitPriceLists[index])
             }
         }
         for (index, item) in veggieCntLists.enumerated() {
@@ -88,6 +95,7 @@ class SelectItemVC: UIViewController {
                 viewController.itemAmountLists.append(veggieAmountLists[index])
                 viewController.itemImageLists.append(veggieImageLists[index])
                 viewController.itemCntLists.append(veggieCntLists[index])
+                viewController.itemPriceLists.append(veggiePriceLists[index])
             }
         }
         navigationController?.show(viewController, sender: nil)
@@ -108,6 +116,7 @@ extension SelectItemVC: UICollectionViewDataSource {
         cell.itemAmount.text = self.itemAmountLists[indexPath.item] + "g"
         cell.itemImg.image = UIImage(named: self.itemImageLists[indexPath.item])
         cell.itemCnt.text = self.itemCntLists[indexPath.item]
+        cell.itemPrice.text = self.itemPriceLists[indexPath.item]
         
         cell.stepper.tag = indexPath.row
         cell.stepper.addTarget(self, action: #selector(stepperAction(sender:)), for: .valueChanged)
@@ -131,10 +140,12 @@ extension SelectItemVC: UICollectionViewDataSource {
         if(totalAmount > 2900) {
             let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:
                 "ExceedAmountVC") as! ExceedAmountVC
-//            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-//            alert.setValue(popOverVC, forKey: "contentViewController")
+            popOverVC.preferredContentSize.width = 323
+            popOverVC.preferredContentSize.height = 277
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+            alert.setValue(popOverVC, forKey: "contentViewController")
             
-            self.present(popOverVC, animated: true)
+            self.present(alert, animated: true)
         } else {
             sumTotal.text = String(totalAmount) + " / 2900g"
         }

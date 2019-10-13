@@ -71,6 +71,12 @@
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="450원 / " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBc-JH-kLE">
+                                <rect key="frame" x="243" y="29" width="48" height="17"/>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
+                                <color key="textColor" name="black"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -80,7 +86,9 @@
                             <constraint firstItem="HJB-Gp-1Ob" firstAttribute="leading" secondItem="4cW-tF-ern" secondAttribute="trailing" constant="1" id="8bn-dL-Fbc"/>
                             <constraint firstItem="cD2-K0-OIx" firstAttribute="centerY" secondItem="HJB-Gp-1Ob" secondAttribute="centerY" id="Hag-j1-baX"/>
                             <constraint firstItem="cD2-K0-OIx" firstAttribute="leading" secondItem="HJB-Gp-1Ob" secondAttribute="trailing" constant="3" id="Kuk-0j-Y8F"/>
+                            <constraint firstItem="zBc-JH-kLE" firstAttribute="centerY" secondItem="i1O-1L-o9u" secondAttribute="centerY" id="SF7-4s-nEs"/>
                             <constraint firstItem="i1O-1L-o9u" firstAttribute="centerY" secondItem="cD2-K0-OIx" secondAttribute="centerY" id="U9z-kg-jvL"/>
+                            <constraint firstItem="kUw-2i-Ch2" firstAttribute="leading" secondItem="zBc-JH-kLE" secondAttribute="trailing" constant="2" id="VV1-LY-aQA"/>
                             <constraint firstItem="i1O-1L-o9u" firstAttribute="leading" secondItem="cD2-K0-OIx" secondAttribute="trailing" constant="8" id="X3x-Vu-dHD"/>
                             <constraint firstItem="HJB-Gp-1Ob" firstAttribute="centerY" secondItem="4cW-tF-ern" secondAttribute="centerY" id="csE-C3-gw0"/>
                             <constraint firstAttribute="trailing" secondItem="kUw-2i-Ch2" secondAttribute="trailing" constant="8.5" id="ro3-rh-sBZ"/>
@@ -118,6 +126,7 @@
                 <outlet property="itemCnt" destination="i1O-1L-o9u" id="RJ1-Jb-SC3"/>
                 <outlet property="itemImg" destination="4cW-tF-ern" id="08h-05-rqI"/>
                 <outlet property="itemName" destination="HJB-Gp-1Ob" id="mZn-mi-2Eq"/>
+                <outlet property="itemPrice" destination="zBc-JH-kLE" id="7G8-zA-zci"/>
                 <outlet property="stepper" destination="cD2-K0-OIx" id="ON2-LK-PtO"/>
             </connections>
             <point key="canvasLocation" x="134.05797101449275" y="104.46428571428571"/>

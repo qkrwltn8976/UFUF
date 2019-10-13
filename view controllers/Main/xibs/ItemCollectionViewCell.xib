@@ -17,6 +17,9 @@
         <array key="NanumSquareR.ttf">
             <string>NanumSquareR</string>
         </array>
+        <array key="a장미다방.ttf">
+            <string>KoreanJMDB-R</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -50,14 +53,14 @@
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eu-jz-tnX">
-                                        <rect key="frame" x="0.0" y="19.5" width="31.5" height="16.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="450원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2k-w3-wAt">
+                                        <rect key="frame" x="0.0" y="19.5" width="35.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="450원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2k-w3-wAt">
-                                        <rect key="frame" x="0.0" y="40" width="35.5" height="16.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(1ea/단위)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHa-oK-L3N">
+                                        <rect key="frame" x="0.0" y="40" width="59" height="16.5"/>
                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
@@ -81,12 +84,35 @@
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="du1-kq-SCL">
+                                <rect key="frame" x="15" y="15" width="110" height="16"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시세대비 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zl4-P6-WEz">
+                                        <rect key="frame" x="0.0" y="0.0" width="60.5" height="16"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="KoreanJMDB-R" family="KoreanJMDBR" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-18% " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRz-U8-aWy">
+                                        <rect key="frame" x="60.5" y="0.0" width="49.5" height="16"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="KoreanJMDB-R" family="KoreanJMDBR" pointSize="16"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tlu-PE-bqK" firstAttribute="leading" secondItem="9o8-gT-Fr1" secondAttribute="leading" constant="15" id="0Fu-0n-clr"/>
+                            <constraint firstItem="du1-kq-SCL" firstAttribute="leading" secondItem="9o8-gT-Fr1" secondAttribute="leading" constant="15" id="0cb-cP-b58"/>
                             <constraint firstItem="Sx7-wa-Gzy" firstAttribute="top" secondItem="9o8-gT-Fr1" secondAttribute="top" constant="45" id="182-KW-Bqh"/>
                             <constraint firstAttribute="trailing" secondItem="N8D-w0-uf0" secondAttribute="trailing" constant="22.5" id="2G0-EZ-HmH"/>
+                            <constraint firstItem="du1-kq-SCL" firstAttribute="top" secondItem="9o8-gT-Fr1" secondAttribute="top" constant="15" id="EAA-nm-vSh"/>
                             <constraint firstItem="GkF-zD-eQT" firstAttribute="centerY" secondItem="Sx7-wa-Gzy" secondAttribute="centerY" id="Nzb-Jc-Yjb"/>
                             <constraint firstItem="avT-2e-DJd" firstAttribute="leading" secondItem="Sx7-wa-Gzy" secondAttribute="trailing" constant="10" id="Stu-Xj-NHU"/>
                             <constraint firstItem="N8D-w0-uf0" firstAttribute="centerY" secondItem="GkF-zD-eQT" secondAttribute="centerY" id="Wyn-FM-GV6"/>
@@ -125,14 +151,14 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="YB2-1y-Chh"/>
             <connections>
-                <outlet property="itemAmount" destination="1eu-jz-tnX" id="RBp-X0-6hV"/>
                 <outlet property="itemCnt" destination="N8D-w0-uf0" id="uuc-Bq-T9V"/>
                 <outlet property="itemImg" destination="Sx7-wa-Gzy" id="3Tm-xO-jEA"/>
                 <outlet property="itemName" destination="PsX-tu-Mlq" id="XB1-MV-neV"/>
                 <outlet property="itemPrice" destination="J2k-w3-wAt" id="elB-hV-4yR"/>
+                <outlet property="itemSale" destination="jRz-U8-aWy" id="BJZ-d1-SC0"/>
                 <outlet property="stepper" destination="GkF-zD-eQT" id="TGK-j5-7so"/>
             </connections>
-            <point key="canvasLocation" x="134.78260869565219" y="104.46428571428571"/>
+            <point key="canvasLocation" x="134.05797101449275" y="104.46428571428571"/>
         </collectionViewCell>
     </objects>
     <resources>

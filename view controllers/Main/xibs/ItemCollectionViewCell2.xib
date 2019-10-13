@@ -46,12 +46,6 @@
                                 </constraints>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUw-2i-Ch2">
-                                <rect key="frame" x="293" y="29" width="31.5" height="17"/>
-                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
-                                <color key="textColor" name="black"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="파 반" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJB-Gp-1Ob">
                                 <rect key="frame" x="66" y="30" width="50" height="15.5"/>
                                 <constraints>
@@ -71,8 +65,8 @@
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="450원 / " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBc-JH-kLE">
-                                <rect key="frame" x="243" y="29" width="48" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="450원" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBc-JH-kLE">
+                                <rect key="frame" x="248" y="22" width="71" height="30"/>
                                 <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
@@ -82,16 +76,14 @@
                         <constraints>
                             <constraint firstItem="4cW-tF-ern" firstAttribute="leading" secondItem="1sI-nT-Sui" secondAttribute="leading" constant="10" id="5nd-cv-YYG"/>
                             <constraint firstItem="4cW-tF-ern" firstAttribute="leading" secondItem="1sI-nT-Sui" secondAttribute="leading" constant="10" id="7Fb-h1-SoR"/>
-                            <constraint firstItem="kUw-2i-Ch2" firstAttribute="centerY" secondItem="i1O-1L-o9u" secondAttribute="centerY" id="869-kP-akz"/>
                             <constraint firstItem="HJB-Gp-1Ob" firstAttribute="leading" secondItem="4cW-tF-ern" secondAttribute="trailing" constant="1" id="8bn-dL-Fbc"/>
                             <constraint firstItem="cD2-K0-OIx" firstAttribute="centerY" secondItem="HJB-Gp-1Ob" secondAttribute="centerY" id="Hag-j1-baX"/>
                             <constraint firstItem="cD2-K0-OIx" firstAttribute="leading" secondItem="HJB-Gp-1Ob" secondAttribute="trailing" constant="3" id="Kuk-0j-Y8F"/>
                             <constraint firstItem="zBc-JH-kLE" firstAttribute="centerY" secondItem="i1O-1L-o9u" secondAttribute="centerY" id="SF7-4s-nEs"/>
                             <constraint firstItem="i1O-1L-o9u" firstAttribute="centerY" secondItem="cD2-K0-OIx" secondAttribute="centerY" id="U9z-kg-jvL"/>
-                            <constraint firstItem="kUw-2i-Ch2" firstAttribute="leading" secondItem="zBc-JH-kLE" secondAttribute="trailing" constant="2" id="VV1-LY-aQA"/>
                             <constraint firstItem="i1O-1L-o9u" firstAttribute="leading" secondItem="cD2-K0-OIx" secondAttribute="trailing" constant="8" id="X3x-Vu-dHD"/>
                             <constraint firstItem="HJB-Gp-1Ob" firstAttribute="centerY" secondItem="4cW-tF-ern" secondAttribute="centerY" id="csE-C3-gw0"/>
-                            <constraint firstAttribute="trailing" secondItem="kUw-2i-Ch2" secondAttribute="trailing" constant="8.5" id="ro3-rh-sBZ"/>
+                            <constraint firstItem="zBc-JH-kLE" firstAttribute="leading" secondItem="1sI-nT-Sui" secondAttribute="leading" constant="248" id="hgp-1l-JBG"/>
                             <constraint firstItem="4cW-tF-ern" firstAttribute="top" secondItem="1sI-nT-Sui" secondAttribute="top" constant="10" id="v4k-0u-7xk"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -122,14 +114,13 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="uCt-rY-kFR"/>
             <connections>
-                <outlet property="itemAmount" destination="kUw-2i-Ch2" id="Fzy-4i-zhz"/>
                 <outlet property="itemCnt" destination="i1O-1L-o9u" id="RJ1-Jb-SC3"/>
                 <outlet property="itemImg" destination="4cW-tF-ern" id="08h-05-rqI"/>
                 <outlet property="itemName" destination="HJB-Gp-1Ob" id="mZn-mi-2Eq"/>
                 <outlet property="itemPrice" destination="zBc-JH-kLE" id="7G8-zA-zci"/>
                 <outlet property="stepper" destination="cD2-K0-OIx" id="ON2-LK-PtO"/>
             </connections>
-            <point key="canvasLocation" x="134.05797101449275" y="104.46428571428571"/>
+            <point key="canvasLocation" x="132.60869565217394" y="104.46428571428571"/>
         </collectionViewCell>
     </objects>
     <resources>

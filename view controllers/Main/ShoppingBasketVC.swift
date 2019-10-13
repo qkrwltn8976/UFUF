@@ -10,7 +10,6 @@ import UIKit
 
 class ShoppingBasketVC: UIViewController {
     var itemNameLists: [String] = []
-    var itemAmountLists: [String] = []
     var itemImageLists: [String] = []
     var itemCntLists: [String] = []
     var itemPriceLists: [String] = []
@@ -38,10 +37,9 @@ extension ShoppingBasketVC: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell2", for: indexPath) as! ItemCollectionViewCell2
         
         cell.itemName.text = self.itemNameLists[indexPath.item]
-        cell.itemAmount.text = self.itemAmountLists[indexPath.item] + "g"
         cell.itemImg.image = UIImage(named: self.itemImageLists[indexPath.item])
         cell.itemCnt.text = self.itemCntLists[indexPath.item]
-        cell.itemPrice.text = self.itemPriceLists[indexPath.item] + " / "
+        cell.itemPrice.text = self.itemPriceLists[indexPath.item] + "원"
 //        cell.stepper.addTarget(self, action: #selector(stepperAction(sender:)), for: .valueChanged)
 //
         return cell
